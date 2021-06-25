@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.customBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+.enter {
+  background-color: #ffffff;
+  color: #e5b0f8;
+  outline: none;
+  border: 0;
+  font-size: 30px;
+  cursor: pointer;
+  grid-area: z;
+}
+
+.email {
+  background-color: #e5b0f8;
+  color: #ffffff;
+  outline: none;
+  border: 0;
+  padding-left: 24px;
+  font-size: 24px;
+  grid-area: e;
+}
+
+.email::placeholder {
+  color: white;
+}
+
+.password {
+  background-color: #e5b0f8;
+  color: #ffffff;
+  outline: none;
+  border: 0;
+  padding-left: 24px;
+  font-size: 24px;
+  grid-area: p;
+}
+
+.password::placeholder {
+  color: white;
+}
+
+.loginContainer {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: #8995d3;
+  display: grid;
+  grid-template-columns: 103px 50px 36px 9px 73px 80px 73px 9px 35px 50px 103px;
+  grid-template-rows: 119px 68px 34px 69px 26px 69px 34px 47px 23px 22px 119px 28px 14px;
+  grid-template-areas:
+    ". . . . . . . . . . ."
+    ". . s s s s s s s . ."
+    ". . . . . . . . . . ."
+    ". e e e e e e e e e ."
+    ". . . . . . . . . . ."
+    ". p p p p p p p p p ."
+    ". . . . . . . . . . ."
+    ". . . . z z z . . . ."
+    ". . . . . . . . . . ."
+    ". . . . . y . . . . ."
+    ". . . . . . . . . . ."
+    ". . . x x x x x . . .";
+}
+
+.signIn {
+  background-color: #ffffff;
+  color: #e5b0f8;
+  font-size: 30px;
+  grid-area: s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signUpLink {
+  color: white;
+  font-size: 24px;
+  grid-area: y;
+}
+
+.forgotPassword {
+  color: #ffffff;
+  font-size: 24px;
+  grid-area: x;
+}

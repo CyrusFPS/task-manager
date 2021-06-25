@@ -1,0 +1,366 @@
+.homeContainer {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 334px 40px auto 32px;
+  grid-template-rows: 21px 937px 21px;
+  grid-template-areas:
+    "s . . ."
+    "s . m ."
+    "s . . .";
+}
+
+.taskBar {
+  background-color: #84a0cb;
+  display: grid;
+  grid-area: s;
+  grid-template-columns: 21px 86px 121px 90px 16px;
+  grid-template-rows: 35px 33px 48px 538px 370px;
+  grid-template-areas:
+    ". . . . ."
+    ". . t . ."
+    ". . . . ."
+    ". s s s ."
+    ". . . . .";
+}
+
+.sideTaskList {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  padding: 0;
+  grid-area: s;
+  grid-template-columns: 1fr;
+  grid-template-rows: 160px 28px 160px 28px 160px;
+  grid-template-areas:
+    "a"
+    "."
+    "b"
+    "."
+    "c";
+}
+
+.sideTask1 {
+  height: 100%;
+  grid-area: a;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns: 16px 191px 50px 35px 5px;
+  grid-template-rows: 5px 11px 26px 18px 24px 27px 22px 27px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . x ."
+    ". t . x ."
+    ". . . . ."
+    ". w . . ."
+    ". . . . ."
+    ". o . . ."
+    ". . . . .";
+}
+
+.taskExit1 {
+  grid-area: x;
+  margin: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+.taskTitle1 {
+  grid-area: t;
+  margin: 0;
+  font-size: 24px;
+}
+
+.taskTime1 {
+  grid-area: w;
+  margin: 0;
+  font-size: 24px;
+}
+
+.taskOften1 {
+  grid-area: o;
+  margin: 0;
+  font-size: 24px;
+}
+
+.sideTask2 {
+  height: 100%;
+  grid-area: b;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns: 16px 191px 50px 35px 5px;
+  grid-template-rows: 5px 11px 26px 18px 24px 27px 22px 27px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . x ."
+    ". t . x ."
+    ". . . . ."
+    ". w . . ."
+    ". . . . ."
+    ". o . . ."
+    ". . . . .";
+}
+
+.taskExit2 {
+  grid-area: x;
+  margin: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+.taskTitle2 {
+  grid-area: t;
+  margin: 0;
+  font-size: 24px;
+}
+
+.taskTime2 {
+  grid-area: w;
+  margin: 0;
+  font-size: 24px;
+}
+
+.taskOften2 {
+  grid-area: o;
+  margin: 0;
+  font-size: 24px;
+}
+
+.sideTask3 {
+  height: 100%;
+  grid-area: c;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns: 16px 191px 50px 35px 5px;
+  grid-template-rows: 5px 11px 26px 18px 24px 27px 22px 27px;
+  grid-template-areas:
+    ". . . . ."
+    ". . . x ."
+    ". t . x ."
+    ". . . . ."
+    ". w . . ."
+    ". . . . ."
+    ". o . . ."
+    ". . . . .";
+}
+
+.taskExit3 {
+  grid-area: x;
+  margin: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+.taskTitle3 {
+  grid-area: t;
+  margin: 0;
+  font-size: 24px;
+}
+
+.taskTime3 {
+  grid-area: w;
+  margin: 0;
+  font-size: 23px;
+}
+
+.taskOften3 {
+  grid-area: o;
+  margin: 0;
+  font-size: 24px;
+}
+
+.mainContainer {
+  background-color: #8995d3;
+  grid-area: m;
+  display: grid;
+  grid-template-columns: 1fr 12.75fr 3.79fr 12.75fr 1fr;
+  grid-template-rows: 1fr 1.214fr 1fr 11.75fr 14.79fr;
+  grid-template-areas:
+    ". . . . ."
+    ". . t . ."
+    ". . . . ."
+    ". l l l ."
+    ". . . . .";
+}
+
+.mainTitle {
+  grid-area: t;
+  color: white;
+  font-size: 40px;
+}
+
+.mainTaskList {
+  grid-area: l;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 110px 27px 110px 27px 110px;
+  grid-template-areas:
+    "a"
+    "."
+    "b"
+    "."
+    "c";
+}
+
+.mainTask1 {
+  grid-area: a;
+  padding: 0;
+  width: 100%;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns:
+    1fr 13.77fr 30.12fr 11.15fr
+    1.63fr;
+  grid-template-rows: 15px 17px 5px 19px 23px 4px 29px;
+  grid-template-areas:
+    ". . . . ."
+    ". t . . ."
+    ". t . b ."
+    ". . . b ."
+    ". w . b ."
+    ". w . . ."
+    ". . . . .";
+}
+
+.mtaskTitle1 {
+  margin: 0;
+  grid-area: t;
+  font-size: 24px;
+}
+
+.mtaskTime1 {
+  margin: 0;
+  grid-area: w;
+  font-size: 24px;
+}
+
+.mtaskStatusBox1 {
+  margin: 0;
+  grid-area: b;
+  background-color: white;
+  color: #e5b0f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mtaskStatus1 {
+  margin: 0;
+  grid-area: s;
+  font-size: 20px;
+}
+
+.mainTask2 {
+  grid-area: b;
+  width: 100%;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns:
+    1fr 13.77fr 30.12fr 11.15fr
+    1.63fr;
+  grid-template-rows: 15px 17px 5px 19px 23px 4px 29px;
+  grid-template-areas:
+    ". . . . ."
+    ". t . . ."
+    ". t . b ."
+    ". . . b ."
+    ". w . b ."
+    ". w . . ."
+    ". . . . .";
+}
+
+.mtaskTitle2 {
+  margin: 0;
+  grid-area: t;
+  font-size: 24px;
+}
+
+.mtaskTime2 {
+  margin: 0;
+  grid-area: w;
+  font-size: 24px;
+}
+
+.mtaskStatusBox2 {
+  margin: 0;
+  grid-area: b;
+  background-color: white;
+  color: #e5b0f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mtaskStatus2 {
+  margin: 0;
+  grid-area: s;
+  font-size: 20px;
+}
+
+.mainTask3 {
+  grid-area: c;
+  width: 100%;
+  color: white;
+  list-style: none;
+  background-color: #e5b0f8;
+  display: grid;
+  grid-template-columns:
+    1fr 13.77fr 30.12fr 11.15fr
+    1.63fr;
+  grid-template-rows: 15px 17px 5px 19px 23px 4px 29px;
+  grid-template-areas:
+    ". . . . ."
+    ". t . . ."
+    ". t . b ."
+    ". . . b ."
+    ". w . b ."
+    ". w . . ."
+    ". . . . .";
+}
+
+.mtaskTitle3 {
+  margin: 0;
+  grid-area: t;
+  font-size: 24px;
+}
+
+.mtaskTime3 {
+  margin: 0;
+  grid-area: w;
+  font-size: 24px;
+}
+
+.mtaskStatusBox3 {
+  margin: 0;
+  grid-area: b;
+  background-color: white;
+  color: #e5b0f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mtaskStatus3 {
+  margin: 0;
+  grid-area: s;
+  font-size: 20px;
+}
+
+.tasksTitle {
+  grid-area: t;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
