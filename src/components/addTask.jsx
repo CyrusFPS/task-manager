@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../css/addTask.module.css';
 
-const addTask = () => {
+const AddTask = () => {
   return (
     <div className={styles.customBody}>
       <div class={styles.container}>
@@ -18,4 +18,4 @@ const addTask = () => {
   )
 }
 
-export default addTask
+export default AddTask

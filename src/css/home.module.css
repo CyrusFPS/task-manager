@@ -23,7 +23,7 @@ body {
   display: grid;
   grid-area: s;
   grid-template-columns: 21px 86px 121px 90px 16px;
-  grid-template-rows: 35px 33px 48px 538px 370px;
+  grid-template-rows: 35px 33px 48px 838px 70px;
   grid-template-areas:
     ". . . . ."
     ". . t . ."
@@ -35,7 +35,6 @@ body {
 .sideTaskList {
   justify-content: center;
   align-items: center;
-  display: grid;
   padding: 0;
   grid-area: s;
   grid-template-columns: 1fr;
@@ -49,9 +48,9 @@ body {
 }
 
 .sideTask1 {
-  height: 100%;
   grid-area: a;
   color: white;
+  margin-bottom: 30px;
   list-style: none;
   background-color: #e5b0f8;
   display: grid;
@@ -84,7 +83,7 @@ body {
 .taskTime1 {
   grid-area: w;
   margin: 0;
-  font-size: 24px;
+  font-size: 23px;
 }
 
 .taskOften1 {
@@ -94,7 +93,6 @@ body {
 }
 
 .sideTask2 {
-  height: 100%;
   grid-area: b;
   color: white;
   list-style: none;
@@ -188,7 +186,7 @@ body {
   grid-area: m;
   display: grid;
   grid-template-columns: 1fr 12.75fr 3.79fr 12.75fr 1fr;
-  grid-template-rows: 1fr 1.214fr 1fr 11.75fr 14.79fr;
+  grid-template-rows: 1fr 1.214fr 1fr 24.75fr 0.39fr;
   grid-template-areas:
     ". . . . ."
     ". . t . ."
@@ -206,19 +204,10 @@ body {
 .mainTaskList {
   grid-area: l;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 110px 27px 110px 27px 110px;
-  grid-template-areas:
-    "a"
-    "."
-    "b"
-    "."
-    "c";
 }
 
 .mainTask1 {
-  grid-area: a;
+  margin-bottom: 30px;
   padding: 0;
   width: 100%;
   color: white;
@@ -259,6 +248,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mtaskStatus1 {
@@ -308,6 +298,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mtaskStatus2 {
@@ -357,6 +348,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mtaskStatus3 {

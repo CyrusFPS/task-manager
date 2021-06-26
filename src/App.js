@@ -4,7 +4,7 @@ import configureStore from "./store/configureStore";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
-import AddTask from "./components/addTask";
+import AddTask from "./components/AddTask";
 
 export const store = configureStore();
 

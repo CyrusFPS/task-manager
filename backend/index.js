@@ -27,6 +27,11 @@ app.post("/api/auth/login", async (req, res) => {
   res.status(200).json(result);
 });
 
+app.patch("/api/tasks/:id", async (req, res) => {
+  console.log(req.params);
+  console.log("Patch request recieved");
+});
+
 app.listen(port, () => {
   console.log(`NODE SERVER LISTENING ON PORT ${port}`);
 });
