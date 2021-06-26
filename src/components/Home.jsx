@@ -2,8 +2,11 @@ import React from 'react'
 import styles from '../css/home.module.css';
 import MainTask from './MainTask';
 import SideTask from './SideTask';
+import { useHistory } from 'react-router';
 
 const Home = () => {
+    let history = useHistory();
+
     return (
           <div className={styles.homeContainer}>
             <div className={styles.taskBar}>
@@ -20,7 +23,7 @@ const Home = () => {
                     <li className={styles.mainTask1}>
                         <h4 className={styles.mtaskTitle1}>ADD TASK HERE</h4>
                         <h4 className={styles.mtaskTime1}></h4>
-                        <div className={styles.mtaskStatusBox1}>
+                        <div onClick={() => history.push("/addTask")} className={styles.mtaskStatusBox1}>
                             <h4 className={styles.mtaskStatus1}>ADD TASK</h4>
                         </div>
                     </li>
