@@ -6,15 +6,6 @@
   align-items: center;
 }
 
-html,
-body {
-  box-sizing: border-box;
-  background-color: #8995d3;
-  height: 100%;
-  margin: 0px;
-  font-family: "Roboto", sans-serif;
-}
-
 .exitButton {
   background-color: #e5b0f8;
   border: 0;
