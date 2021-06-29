@@ -5,7 +5,7 @@ import { changeTaskStatus } from '../store/tasks';
 
 const MainTask = (props) => {
   const dispatch = useDispatch()
-  const task = { id: props.id, title: props.title, time: props.time, status: props.status };
+  const task = props.task;
 
   const onClick = (task) => {
     dispatch(changeTaskStatus(task));

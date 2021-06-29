@@ -46,5 +46,35 @@ const login = async (user) => {
   return foundUser[0];
 };
 
+const addTask = async (task, userId) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      userId: userId,
+    },
+  });
+  const updatedTasks = user.tasks.push(task);
+  const result = prisma.user.update({
+    where: {
+      userId: userId,
+    },
+    data: {
+      tasks: updatedTasks,
+    },
+  });
+  return result;
+};
+
+const getTasks = async (userId) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      userId: userId,
+    },
+  });
+  if (!user) return "User not found";
+  return user.tasks;
+};
+
 exports.signup = signup;
 exports.login = login;
+exports.addTask = addTask;
+exports.getTasks = getTasks;

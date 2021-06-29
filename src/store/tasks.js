@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import { apiCallBegan } from "./api";
+import { userLoggedIn } from "./user";
 
 const slice = createSlice({
   name: "tasks",
@@ -21,6 +22,8 @@ const slice = createSlice({
     },
     tasksLoaded: (tasks, action) => {
       console.log("Tasks loaded");
+      console.log("Tasks: " + action.payload);
+      tasks.list = action.payload;
     },
     tasksLoadRequested: (tasks, action) => {
       console.log("Tasks load requested");
@@ -78,10 +81,11 @@ export const addTask = (task) =>
     onError: taskAddRequestFailed.type,
   });
 
-export const loadTasks = () => (dispatch) => {
+export const loadTasks = (userId) => (dispatch) => {
+  console.log(userId);
   dispatch(
     apiCallBegan({
-      url,
+      url: url + "/" + userId,
       method: "get",
       onStart: tasksLoadRequested.type,
       onSuccess: tasksLoaded.type,

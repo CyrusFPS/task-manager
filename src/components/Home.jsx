@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../css/home.module.css';
 import MainTask from './MainTask';
+import MainTasks from './MainTasks';
 import SideTask from './SideTask';
 import { useHistory } from 'react-router';
 
@@ -27,9 +28,7 @@ const Home = () => {
                             <h4 className={styles.mtaskStatus1}>ADD TASK</h4>
                         </div>
                     </li>
-                    <MainTask id={1} title="Go To Gym" time="5:00AM - 6:30AM" status={true}/>
-                    <MainTask id={2} title="Walk The Dog" time="7:00AM - 8:00AM" status={false}/>
-                    <MainTask id={3} title="Finish Project" time="9:00AM - 10:00AM" status={true}/>
+                        <MainTasks />
                 </ul>
             </div>
         </div>
