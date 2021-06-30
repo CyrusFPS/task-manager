@@ -23,7 +23,9 @@ const AddTask = () => {
     const id = Math.max(...ids) + 1;
     const task = { id, title, time: `${startTime} - ${endTime}`, often: selected, status: false };
 
-    dispatch(addTask(task));
+    dispatch(addTask(task, state.auth.user.userId));
+
+    history.push("/home");
   };
 
   const dailyClick = () => {

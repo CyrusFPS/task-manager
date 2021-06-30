@@ -90,6 +90,7 @@ body {
   grid-area: o;
   margin: 0;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .sideTask2 {

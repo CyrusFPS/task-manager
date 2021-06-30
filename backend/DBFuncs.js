@@ -52,7 +52,8 @@ const addTask = async (task, userId) => {
       userId: userId,
     },
   });
-  const updatedTasks = user.tasks.push(task);
+  let updatedTasks = user.tasks;
+  updatedTasks.push(task);
   const result = await prisma.user.update({
     where: {
       userId: userId,
@@ -96,8 +97,29 @@ const changeTaskStatus = async (id, userId) => {
   return "Task updated";
 };
 
+const deleteTask = async (id, userId) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      userId: userId,
+    },
+  });
+  if (!user) return "User not found";
+  const updatedTasks = user.tasks.filter((task) => task.id !== id);
+  if (updatedTasks === user.tasks) return "Task not found";
+  const result = await prisma.user.update({
+    where: {
+      userId: userId,
+    },
+    data: {
+      tasks: updatedTasks,
+    },
+  });
+  return updatedTasks;
+};
+
 exports.signup = signup;
 exports.login = login;
 exports.addTask = addTask;
 exports.getTasks = getTasks;
 exports.changeTaskStatus = changeTaskStatus;
+exports.deleteTask = deleteTask;

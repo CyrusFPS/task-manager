@@ -41,6 +41,7 @@ const slice = createSlice({
       console.log("Task status change request failed");
     },
     taskDeleted: (tasks, action) => {
+      tasks.list = action.payload;
       console.log("Task deleted");
     },
     taskDeletionRequested: (tasks, action) => {
@@ -71,11 +72,11 @@ export default slice.reducer;
 
 const url = "/tasks";
 
-export const addTask = (task) =>
+export const addTask = (task, userId) =>
   apiCallBegan({
     url,
     method: "post",
-    data: task,
+    data: { task, userId },
     onStart: taskAddRequested.type,
     onSuccess: taskAdded.type,
     onError: taskAddRequestFailed.type,
@@ -103,11 +104,10 @@ export const changeTaskStatus = (task, userId) =>
     onError: taskStatusChangeRequestFailed.type,
   });
 
-export const deleteTask = (task) =>
+export const deleteTask = (task, userId) =>
   apiCallBegan({
-    url: url + "/" + task.id,
+    url: url + "/" + task.id + "/" + userId,
     method: "delete",
-    data: task.id,
     onStart: taskDeletionRequested.type,
     onSuccess: taskDeleted.type,
     onError: taskDeletionRequestFailed.type,

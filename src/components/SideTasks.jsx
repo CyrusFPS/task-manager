@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MainTask from './MainTask';
-import { loadTasks } from '../store/tasks';
+import SideTask from './SideTask';
 import { useDispatch } from 'react-redux'; 
 import { store } from '../App';
 
@@ -8,10 +7,6 @@ const MainTasks = () => {
   const dispatch = useDispatch();
   const state = store.getState();
   const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    dispatch(loadTasks(state.auth.user.userId));
-  }, []);
 
   const unsubscribeMe = store.subscribe(() => {
     const newState = store.getState();
@@ -28,7 +23,7 @@ const MainTasks = () => {
   return (
     <>
       {tasks.map(task => (
-        <MainTask task={task} />
+        <SideTask task={task} />
       ))}
     </>
   )

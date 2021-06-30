@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../css/home.module.css';
-import MainTask from './MainTask';
 import MainTasks from './MainTasks';
-import SideTask from './SideTask';
+import SideTasks from './SideTasks';
 import { useHistory } from 'react-router';
+import { store } from '../App';
 
 const Home = () => {
     let history = useHistory();
+
+    useEffect(() => {
+        const state = store.getState();
+        if (!state.auth.user.status.loggedIn) history.push("/login");
+    }, []);
 
     return (
           <div className={styles.homeContainer}>
             <div className={styles.taskBar}>
                 <p className={styles.tasksTitle}>TASKS</p>
                 <ul className={styles.sideTaskList}>
-                    <SideTask id={1} title="Go To Gym" time="5:00AM - 6:30AM" often={true}/>
-                    <SideTask id={2} title="Walk The Dog" time="7:00AM - 8:00AM" often={true}/>
-                    <SideTask id={3} title="Finish Project" time="9:00AM - 10:00AM" often={false}/>
+                    <SideTasks />
                 </ul>
             </div>
             <div className={styles.mainContainer}>

@@ -35,7 +35,7 @@ const Login = () => {
           <div className={styles.signIn}>SIGN IN</div>
           <input type="email" name="email" id="" value={email} onChange={e => setEmail(e.target.value)} className={styles.email} placeholder="johndoe@gmail.com" />
           <input type="password" name="password" id="" value={password} onChange={e => setPassword(e.target.value)} className={styles.password} placeholder="Password" />
-          <button className={styles.enter} onClick={onSubmit}>ENTER</button>
+          <button className={styles.enter} type="submit" onClick={onSubmit}>ENTER</button>
           <a href="" className={styles.signUpLink} onClick={() => history.push('/signup')}>Sign up</a>
           <a href="" className={styles.forgotPassword}>Forgot your password?</a>
         </div>
