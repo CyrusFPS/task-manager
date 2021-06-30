@@ -53,7 +53,7 @@ const addTask = async (task, userId) => {
     },
   });
   const updatedTasks = user.tasks.push(task);
-  const result = prisma.user.update({
+  const result = await prisma.user.update({
     where: {
       userId: userId,
     },
@@ -74,7 +74,30 @@ const getTasks = async (userId) => {
   return user.tasks;
 };
 
+const changeTaskStatus = async (id, userId) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      userId: userId,
+    },
+  });
+  if (!user) return "User not found";
+  const updatedTasks = user.tasks.map((task) =>
+    task.id === id ? { ...task, status: !task.status } : task
+  );
+  const result = await prisma.user.update({
+    where: {
+      userId: userId,
+    },
+    data: {
+      tasks: updatedTasks,
+    },
+  });
+
+  return "Task updated";
+};
+
 exports.signup = signup;
 exports.login = login;
 exports.addTask = addTask;
 exports.getTasks = getTasks;
+exports.changeTaskStatus = changeTaskStatus;

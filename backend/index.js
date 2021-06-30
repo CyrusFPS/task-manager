@@ -40,9 +40,12 @@ app.post("/api/tasks", async (req, res) => {
   console.log(task);
 });
 
-app.patch("/api/tasks/:id", async (req, res) => {
-  console.log(req.params);
-  console.log("Patch request recieved");
+app.patch("/api/tasks/:id/:userId", async (req, res) => {
+  const id = parseInt(req.params.id);
+  const userId = parseInt(req.params.userId);
+  const result = await DBFuncs.changeTaskStatus(id, userId);
+  if (result === "User not found") return res.sendStatus(500);
+  if (result === "Task updated") return res.sendStatus(200);
 });
 
 app.listen(port, () => {

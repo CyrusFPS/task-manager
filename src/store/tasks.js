@@ -94,9 +94,9 @@ export const loadTasks = (userId) => (dispatch) => {
   );
 };
 
-export const changeTaskStatus = (task) =>
+export const changeTaskStatus = (task, userId) =>
   apiCallBegan({
-    url: url + "/" + task.id,
+    url: url + "/" + task + "/" + userId,
     method: "patch",
     onStart: taskStatusChangeRequested.type,
     onSuccess: taskStatusChanged.type,
