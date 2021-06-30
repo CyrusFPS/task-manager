@@ -13,6 +13,7 @@ const slice = createSlice({
   reducers: {
     taskAdded: (tasks, action) => {
       console.log("Task added");
+      tasks.list = action.payload;
     },
     taskAddRequested: (tasks, action) => {
       console.log("Task add requested");
