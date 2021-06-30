@@ -1,4 +1,3 @@
-// const { Pool, Client } = require("pg");
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -62,7 +61,7 @@ const addTask = async (task, userId) => {
       tasks: updatedTasks,
     },
   });
-  return result;
+  return updatedTasks;
 };
 
 const getTasks = async (userId) => {

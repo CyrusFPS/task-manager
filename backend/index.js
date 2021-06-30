@@ -36,6 +36,7 @@ app.post("/api/tasks", async (req, res) => {
   const task = req.body.task;
   const userId = parseInt(req.body.userId);
   const result = await DBFuncs.addTask(task, userId);
+  return res.json(result);
 });
 
 app.patch("/api/tasks/:id/:userId", async (req, res) => {
@@ -49,7 +50,6 @@ app.patch("/api/tasks/:id/:userId", async (req, res) => {
 app.delete("/api/tasks/:id/:userId", async (req, res) => {
   const id = parseInt(req.params.id);
   const userId = parseInt(req.params.userId);
-  console.log(userId, id);
   const result = await DBFuncs.deleteTask(id, userId);
   if (result === "User not found") return res.sendStatus(500);
   if (result === "Task not found") return res.sendStatus(500);
