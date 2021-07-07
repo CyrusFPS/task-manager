@@ -14,13 +14,22 @@ const AddTask = () => {
   const state = store.getState();
   let history = useHistory();
 
+  const createId = () => {
+    if (!state.entities.tasks.list) {
+      return 1;
+    } else {
+      const ids = state.entities.tasks.list.map(task => task.id * 1);
+      const id = Math.max(...ids) + 1;
+      return id;
+    }
+  }
+
   const onClick = e => {
     e.preventDefault();
 
     if (title === '' || startTime === '' || endTime === '') return alert("Please fill out all fields");
 
-    const ids = state.entities.tasks.list.map(task => task.id * 1);
-    const id = Math.max(...ids) + 1;
+    const id = createId();
     const task = { id, title, time: `${startTime} - ${endTime}`, often: selected, status: false };
 
     dispatch(addTask(task, state.auth.user.userId));

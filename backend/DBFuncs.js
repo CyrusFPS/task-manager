@@ -51,7 +51,8 @@ const addTask = async (task, userId) => {
       userId: userId,
     },
   });
-  let updatedTasks = user.tasks;
+  let updatedTasks = [];
+  if (user.tasks) updatedTasks = user.tasks;
   updatedTasks.push(task);
   const result = await prisma.user.update({
     where: {
@@ -65,6 +66,7 @@ const addTask = async (task, userId) => {
 };
 
 const getTasks = async (userId) => {
+  if (isNaN(userId)) return "User not found";
   const user = await prisma.user.findUnique({
     where: {
       userId: userId,

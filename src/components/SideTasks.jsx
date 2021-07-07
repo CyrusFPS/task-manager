@@ -13,6 +13,13 @@ const MainTasks = () => {
     setTasks(newState.entities.tasks.list);
   });
 
+  if (!tasks) {
+    return (
+      <>
+      </>
+    )
+  }
+
   if (tasks.length === 0) {
     return (
       <>
